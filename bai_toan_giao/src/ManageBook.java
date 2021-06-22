@@ -1,7 +1,8 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
-public class ManageBook {
+public class ManageBook  {
     Scanner sc = new Scanner(System.in);
     ArrayList<Book> list = new ArrayList<>();
 
@@ -24,7 +25,8 @@ public class ManageBook {
     }
 
     public void editBook(int index, Book book) {
-        list.set(index, book);
+      list.set(index,book);
+
     }
 
     public void fillByName(String name) {
@@ -46,16 +48,18 @@ public class ManageBook {
         }
     }
 
-    public void show() {
+    public void display() {
         for (Book e : list) {
             System.out.println(e);
         }
     }
-//    public int searchByPrice(String price){
-//        int index;
-//        for (int i = 0; i < list.size(); i++) {
-//
-//
-//        }
-//    }
+
+    public void searchByPrice(float price) {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getPrice() == (price)) {
+                System.out.println(list.get(i));
+
+            }
+        }
+    }
 }
